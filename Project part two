@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to ask a question, display options, and check the user's answer
+bool ask_question(string question, string options[], int num_options, int correct_answer_index) {
+    cout << question << endl;
+    for (int i = 0; i < num_options; i++) {
+        cout << (i + 1) << ". " << options[i] << endl;
+    }
+
+    int user_answer;
+    cout << "Choose the correct option (1-" << num_options << "): ";
+    cin >> user_answer;
+
+    // Check if the answer is valid and correct
+    if (user_answer >= 1 && user_answer <= num_options) {
+        if (user_answer - 1 == correct_answer_index) {
+            cout << "Correct! 🎉" << endl;
+            return true;
+        }
+        else {
+            cout << "Wrong! The correct answer was: " << options[correct_answer_index] << "." << endl;
+            return false;
+        }
+    }
+    else {
+        cout << "Invalid input! Please choose a number between 1 and " << num_options << "." << endl;
+        return false;
+    }
