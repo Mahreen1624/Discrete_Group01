@@ -1,0 +1,20 @@
+int main()
+{
+    int score = 0; 
+
+    
+    for (int i = 0; i < 4; i++)
+    {
+        cout << "\nQuestion " << (i + 1) << ": " << endl;
+        if (ask_question(questions[i], options[i], 4, answers[i])) 
+        {
+            score++;
+        }
+    }
+
+
+    cout << "\nGame Over! You scored " << score << " out of 4." << endl;
+
+    return 0;
+  
+}
